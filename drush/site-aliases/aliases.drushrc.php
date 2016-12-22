@@ -358,4 +358,14 @@
 #$aliases['live'] = array(
 #    'uri' => 'http://example.com',
 #    'root' => $aliases['dev']['root'],
-#  ) + $aliases['server'];
+#  ) + $aliases['server'];// [vagrant_machine_name].local
+$aliases['commerced8.local'] = array(
+  // /var/www/[vagrant_machine_name]/docroot
+  'root' => '/var/www/commerced8/docroot',
+  // vagrant_hostname
+  'uri' => 'http://local.commerced8.com',
+  // vagrant_hostname
+  'remote-host' => 'local.commerced8.com',
+  'remote-user' => 'vagrant',
+  'ssh-options' => '-o PasswordAuthentication=no -i ' . drush_server_home() . '/.vagrant.d/insecure_private_key'
+);
